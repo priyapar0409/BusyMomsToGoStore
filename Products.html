@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories</title>
+    <style>
+        .headerLogo {
+            font-family: "Libre Franklin";
+            font-weight: 400;
+            font-style: normal;
+            text-align: initial;
+            display: flex;
+            background-color: rgb(245, 243, 243);
+            padding-bottom: 40px;
+            background-image: url("https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png");
+            background-size: 100%;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+            background-attachment: initial;
+        }
+        .header1 {
+            box-sizing: inherit;
+            max-width: 960px;
+            width: 100%;
+            margin: auto;
+        }
+        .header2 {
+            box-sizing: inherit;
+            position: relative;
+            margin: 0px;
+        }
+        .header3 {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(12, 1fr);
+            background-color: rgba(255, 255, 255, 0);
+            background-image: none;
+            column-gap: unset !important;
+            background-size: initial;
+            background-position: 50% 50%;
+            background-repeat: repeat;
+            background-attachment: initial;
+        }
+        .header4 {
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / 13;
+            align-self: flex-start;
+        }
+        .header5 {
+            position: relative;
+            text-align: initial;
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+        }
+        .header6 {
+            align-self: center;
+        }
+        .pic1 {
+            position: relative;
+            display: block;
+            height: 0px;
+            overflow: visible;
+            padding-bottom: 100%;
+        }
+        .img1 {
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
+            width: 264px;
+        }
+        .header7 {
+            position: relative;
+            text-align: initial;
+            margin: 0px;
+        }
+        .header8 {
+            display: grid;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            grid-template-columns: repeat(12, 1fr);
+            padding: 10px;
+            background-image: none;
+            column-gap: unset !important;
+            background-size: initial;
+            background-position: 50% 50%;
+            background-repeat: repeat;
+            background-attachment: initial;
+        }
+        .header9 {
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / 13;
+            align-self: flex-start;
+        }
+        .header {
+            align-items: center;
+            justify-content: space-between;
+            background: url('https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png') repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            height: 200px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ff7f50;
+            color: white;
+            border-radius: 5px 5px 0 0;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background-color: #ff5722;
+        }
+        .category {
+            display: none;
+        }
+        .category.active {
+            display: block;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product p {
+            font-size: 14px;
+            color: #555;
+        }
+        .product a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #ff7f50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .product a:hover {
+            background: #ff5722;
+        }
+        #AaDisclaimer {
+            text-align: center;
+            color: red;
+            background: url('https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587172d87a12_cover2.png') repeat;
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: grid;
+            align-items: center;
+        }
+        .submenu {
+            display: none; 
+            position: absolute; 
+            background: white; 
+            border: 1px solid #ccc; 
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section class="headerLogo">
+            <div width="960px" class="header1">
+                <div class="header2">
+                    <div class="header3">
+                        <div size="12" class="header4">
+                            <div class="header5">
+                                <div width="264" class="header6">
+                                    <a href="https://rprnk421.systeme.io/welcome">
+                                        <picture class="pic1">
+                                            <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67a271cb9521f_BusyMomsToGoStore.png" width="264" loading="eager" class="img1">
+                                        </picture>
+                                    </a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 20px; align-self: flex-end;">
+                                <a href="https://rprnk421.systeme.io/welcome" class="home-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="30" alt="Home">
+                                </a>
+                                <div class="menu-container">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" width="30" alt="Menu" class="menu-icon">
+                                    <div class="submenu">
+                                        <a href="https://rprnk421.systeme.io/about-us" target="_blank">About Us</a><br>
+                                        <a href="https://rprnk421.systeme.io/contact" target="_blank">Contact Us</a><br>
+                                        <!--<a href="PAGE3_URL_HERE" target="_blank">My Blog</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header7">
+                                <div class="header8">
+                                    <div size="12" class="header9">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="header">
+        <!-- <img src="https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png" alt="Site Logo"> -->        
+        <h1>Busy Moms Go To Store - Products</h1>
+        <div class="tabs">
+            <div class="tab active" data-category="category1">📦 Tech</div>
+            <div class="tab" data-category="category2">📦 Category 2</div>
+            <div class="tab" data-category="category3">📦 Category 3</div>
+        </div>
+    </div>
+    <div id="category1" class="category active">
+        <div class="product-grid"></div>
+    </div>
+    <div id="category2" class="category">
+        <div class="product-grid"></div>
+    </div>
+    <div id="category3" class="category">
+        <div class="product-grid"></div>
+    </div>
+    <div id="AaDisclaimer">
+        *As an Amazon Associate I earn from qualifying purchases
+    </div>
+    
+    <script>
+        const categories = document.querySelectorAll('.category');
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                categories.forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-category')).classList.add('active');
+            });
+        });
+
+        function createProduct(product) {
+            return `
+                <div class="product">
+                    <div class="carousel">
+                        ${product.images.map((img, index) => `<img src="${img}" class="${index === 0 ? 'active' : ''}">`).join('')}
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                    <h3>${product.title}</h3>
+                    <p>${product.description}</p>
+                    <a href="${product.link}" target="_blank">View on Amazon</a>
+                </div>
+            `;
+        }
+        
+        const productData = 
+        [
+            {
+                name: "category1",
+                products: [
+                    {
+                        title: "Amazon Fire HD 8 Kids tablet",
+                        description: "Amazon Fire HD 8 Kids tablet, ages 3-7. Top-selling 8\" kids tablet on Amazon - 2022. Ad-free content with parental controls included, 13-hr battery, 64 GB, Blue",
+                        link: "https://amzn.to/4jGd3DF",
+                        images: [
+                            "https://m.media-amazon.com/images/I/81Zk+jwfOeL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/51OjR-ZoH9L._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/613chwH3U4L._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/512RnyUKoSL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/51xLYmyP7PL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/61aZPrFYJZL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/618QZTMjOVL._AC_SL1000_.jpg"
+                        ]
+                    },
+                    {
+                        title: "Belkin Portable Charger, Power Bank",
+                        description: "Belkin Portable Charger, Power Bank 10,000mAh, 23W w/Integrated Lightning Cable & USB-C Cable - iPhone Charger Battery Pack for Apple iPhone 16, 15, 14, Galaxy S25, Pixel 9, Travel Essentials - Black",
+                        link: "https://amzn.to/3PYvVAa",
+                        images: [
+                            "https://m.media-amazon.com/images/I/51j3+v5AuNL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61wUvUNnz+L._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61Smcz3FjdL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71cwKWTSefL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/714OZvw-dTL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/81XCr874mtL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/6157BQ4ctvL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71uomDkUfbL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71pw92hjWBL._AC_SL1500_.jpg"
+                        ]
+                    },
+                    {
+                        title: "Amazon Fire HD 8 Kids tablet",
+                        description: "Amazon Fire HD 8 Kids tablet, ages 3-7. Top-selling 8\" kids tablet on Amazon - 2022. Ad-free content with parental controls included, 13-hr battery, 64 GB, Blue",
+                        link: "https://amzn.to/4jGd3DF",
+                        images: [
+                            "https://m.media-amazon.com/images/I/81Zk+jwfOeL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/51OjR-ZoH9L._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/613chwH3U4L._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/512RnyUKoSL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/51xLYmyP7PL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/61aZPrFYJZL._AC_SL1000_.jpg",
+                            "https://m.media-amazon.com/images/I/618QZTMjOVL._AC_SL1000_.jpg"
+                        ]
+                    },
+                    {
+                        title: "Belkin Portable Charger, Power Bank",
+                        description: "Belkin Portable Charger, Power Bank 10,000mAh, 23W w/Integrated Lightning Cable & USB-C Cable - iPhone Charger Battery Pack for Apple iPhone 16, 15, 14, Galaxy S25, Pixel 9, Travel Essentials - Black",
+                        link: "https://amzn.to/3PYvVAa",
+                        images: [
+                            "https://m.media-amazon.com/images/I/51j3+v5AuNL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61wUvUNnz+L._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61Smcz3FjdL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71cwKWTSefL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/714OZvw-dTL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/81XCr874mtL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/6157BQ4ctvL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71uomDkUfbL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71pw92hjWBL._AC_SL1500_.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                name: "category2",
+                products: [
+                    {
+                        title: "Instant Pot Duo 7-in-1 Electric Pressure Cooker",
+                        description: "Combines 7 kitchen appliances in 1: Pressure cooker, slow cooker, rice cooker, steamer, sauté pan, yogurt maker, and warmer.",
+                        link: "https://www.amazon.com/dp/B00FLYWNYQ",
+                        images: [
+                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg"
+                        ]
+                    },
+                    {
+                        title: "iRobot Roomba 694 Robot Vacuum",
+                        description: "Wi-Fi connectivity, personalized cleaning suggestions, and works with Alexa. Captures dust, dirt, and debris from carpets and hard floors.",
+                        link: "https://www.amazon.com/dp/B08P3VZ3PY",
+                        images: [
+                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg"
+                        ]
+                    },
+                    {
+                        title: "Lodge Pre-Seasoned Cast Iron Skillet with Assist Handle Holder",
+                        description: "Cast iron skillet is a classic in any kitchen. Great for a variety of cooking techniques, from searing to baking.",
+                        link: "https://www.amazon.com/dp/B00006JSUA",
+                        images: [
+                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg",
+                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg"
+                        ]
+                    }
+                ]
+            },
+            {
+                name: "category3",
+                products: [
+                    {
+                        title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+                        description: "James Clear's bestseller offering practical strategies to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
+                        link: "https://www.amazon.com/dp/0735211299",
+                        images: [
+                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg"
+                        ]
+                    },
+                    {
+                        title: "Where the Crawdads Sing",
+                        description: "Delia Owens' novel about a young woman who grows up isolated in the marshes of North Carolina, intertwining a murder mystery with a coming-of-age story.",
+                        link: "https://www.amazon.com/dp/0735219109",
+                        images: [
+                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
+                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
+                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg"
+                        ]
+                    }
+                ]
+            }
+        ]
+ 
+
+
+        productData.forEach(category => {
+            const container = document.getElementById(category.name).querySelector('.product-grid');
+            container.innerHTML = category.products.map(createProduct).join('');
+        });
+
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+            
+            function showImage(index) {
+                images.forEach(img => img.classList.remove('active'));
+                images[index].classList.add('active');
+            }
+            
+            carousel.querySelector('.prev').addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
+            
+            carousel.querySelector('.next').addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+        });
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            var submenu = document.querySelector('.submenu');
+            submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+        });
+
+    </script>
+</body>
+</html>
