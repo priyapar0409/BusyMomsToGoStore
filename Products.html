@@ -232,7 +232,7 @@
                         <div size="12" class="header4">
                             <div class="header5">
                                 <div width="264" class="header6">
-                                    <a href="https://rprnk421.systeme.io/welcome">
+                                    <a href="https://busy-moms-goto-store.systeme.io/welcome">
                                         <picture class="pic1">
                                             <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67a28bdaa9da3_BusyMomsGoToStore.png" width="264" loading="eager" class="img1">
                                         </picture>
@@ -240,14 +240,14 @@
                                 </div>
                             </div>
                             <div style="display: flex; gap: 20px; align-self: flex-end;">
-                                <a href="https://rprnk421.systeme.io/welcome" class="home-icon">
+                                <a href="https://busy-moms-goto-store.systeme.io/welcome" class="home-icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="30" alt="Home">
                                 </a>
                                 <div class="menu-container">
                                     <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" width="30" alt="Menu" class="menu-icon">
                                     <div class="submenu">
-                                        <a href="https://rprnk421.systeme.io/about-us" target="_blank">About Us</a><br>
-                                        <a href="https://rprnk421.systeme.io/contact" target="_blank">Contact Us</a><br>
+                                        <a href="https://busy-moms-goto-store.systeme.io/about-us" target="_blank">About Us</a><br>
+                                        <a href="https://busy-moms-goto-store.systeme.io/contact" target="_blank">Contact Us</a><br>
                                         <!--<a href="PAGE3_URL_HERE" target="_blank">My Blog</a>-->
                                     </div>
                                 </div>
@@ -298,6 +298,10 @@
             });
         });
 
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const jsonUrl = "https://priyapar0409.github.io/BusyMomsToGoStore/products.json"; // Replace with actual URL
+
         function createProduct(product) {
             return `
                 <div class="product">
@@ -312,162 +316,55 @@
                 </div>
             `;
         }
-        
-        const productData = 
-        [
-            {
-                name: "travelEssentials",
-                products: [
-                    {
-                        title: "Amazon Fire HD 8 Kids tablet",
-                        description: "Amazon Fire HD 8 Kids tablet, ages 3-7. Top-selling 8\" kids tablet on Amazon - 2022. Ad-free content with parental controls included, 13-hr battery, 64 GB, Blue",
-                        link: "https://amzn.to/4jGd3DF",
-                        images: [
-                            "https://m.media-amazon.com/images/I/81Zk+jwfOeL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/51OjR-ZoH9L._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/613chwH3U4L._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/512RnyUKoSL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/51xLYmyP7PL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/61aZPrFYJZL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/618QZTMjOVL._AC_SL1000_.jpg"
-                        ]
-                    },
-                    {
-                        title: "Belkin Portable Charger, Power Bank",
-                        description: "Belkin Portable Charger, Power Bank 10,000mAh, 23W w/Integrated Lightning Cable & USB-C Cable - iPhone Charger Battery Pack for Apple iPhone 16, 15, 14, Galaxy S25, Pixel 9, Travel Essentials - Black",
-                        link: "https://amzn.to/3PYvVAa",
-                        images: [
-                            "https://m.media-amazon.com/images/I/51j3+v5AuNL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61wUvUNnz+L._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61Smcz3FjdL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71cwKWTSefL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/714OZvw-dTL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/81XCr874mtL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/6157BQ4ctvL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71uomDkUfbL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71pw92hjWBL._AC_SL1500_.jpg"
-                        ]
-                    },
-                    {
-                        title: "Amazon Fire HD 8 Kids tablet",
-                        description: "Amazon Fire HD 8 Kids tablet, ages 3-7. Top-selling 8\" kids tablet on Amazon - 2022. Ad-free content with parental controls included, 13-hr battery, 64 GB, Blue",
-                        link: "https://amzn.to/4jGd3DF",
-                        images: [
-                            "https://m.media-amazon.com/images/I/81Zk+jwfOeL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/51OjR-ZoH9L._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/613chwH3U4L._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/512RnyUKoSL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/51xLYmyP7PL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/61aZPrFYJZL._AC_SL1000_.jpg",
-                            "https://m.media-amazon.com/images/I/618QZTMjOVL._AC_SL1000_.jpg"
-                        ]
-                    },
-                    {
-                        title: "Belkin Portable Charger, Power Bank",
-                        description: "Belkin Portable Charger, Power Bank 10,000mAh, 23W w/Integrated Lightning Cable & USB-C Cable - iPhone Charger Battery Pack for Apple iPhone 16, 15, 14, Galaxy S25, Pixel 9, Travel Essentials - Black",
-                        link: "https://amzn.to/3PYvVAa",
-                        images: [
-                            "https://m.media-amazon.com/images/I/51j3+v5AuNL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61wUvUNnz+L._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61Smcz3FjdL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71cwKWTSefL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/714OZvw-dTL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/81XCr874mtL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/6157BQ4ctvL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71uomDkUfbL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71pw92hjWBL._AC_SL1500_.jpg"
-                        ]
-                    }
-                ]
-            },
-            {
-                name: "category2",
-                products: [
-                    {
-                        title: "Instant Pot Duo 7-in-1 Electric Pressure Cooker",
-                        description: "Combines 7 kitchen appliances in 1: Pressure cooker, slow cooker, rice cooker, steamer, sauté pan, yogurt maker, and warmer.",
-                        link: "https://www.amazon.com/dp/B00FLYWNYQ",
-                        images: [
-                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/61aK9X8vA5L._AC_SL1500_.jpg"
-                        ]
-                    },
-                    {
-                        title: "iRobot Roomba 694 Robot Vacuum",
-                        description: "Wi-Fi connectivity, personalized cleaning suggestions, and works with Alexa. Captures dust, dirt, and debris from carpets and hard floors.",
-                        link: "https://www.amazon.com/dp/B08P3VZ3PY",
-                        images: [
-                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/71n0uLmx1DL._AC_SL1500_.jpg"
-                        ]
-                    },
-                    {
-                        title: "Lodge Pre-Seasoned Cast Iron Skillet with Assist Handle Holder",
-                        description: "Cast iron skillet is a classic in any kitchen. Great for a variety of cooking techniques, from searing to baking.",
-                        link: "https://www.amazon.com/dp/B00006JSUA",
-                        images: [
-                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg",
-                            "https://m.media-amazon.com/images/I/81+N4PFF7NL._AC_SL1500_.jpg"
-                        ]
-                    }
-                ]
-            },
-            {
-                name: "category3",
-                products: [
-                    {
-                        title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-                        description: "James Clear's bestseller offering practical strategies to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
-                        link: "https://www.amazon.com/dp/0735211299",
-                        images: [
-                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
-                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
-                            "https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg"
-                        ]
-                    },
-                    {
-                        title: "Where the Crawdads Sing",
-                        description: "Delia Owens' novel about a young woman who grows up isolated in the marshes of North Carolina, intertwining a murder mystery with a coming-of-age story.",
-                        link: "https://www.amazon.com/dp/0735219109",
-                        images: [
-                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
-                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
-                            "https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg"
-                        ]
-                    }
-                ]
-            }
-        ]
- 
 
-
-        productData.forEach(category => {
-            const container = document.getElementById(category.name).querySelector('.product-grid');
-            container.innerHTML = category.products.map(createProduct).join('');
-        });
-
+    function setupCarousels() {
         document.querySelectorAll('.carousel').forEach(carousel => {
             const images = carousel.querySelectorAll('img');
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+
+            if (!images.length || !prevButton || !nextButton) return;
+
             let currentIndex = 0;
-            
+
             function showImage(index) {
                 images.forEach(img => img.classList.remove('active'));
                 images[index].classList.add('active');
             }
-            
-            carousel.querySelector('.prev').addEventListener('click', () => {
+
+            prevButton.addEventListener('click', () => {
                 currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
                 showImage(currentIndex);
             });
-            
-            carousel.querySelector('.next').addEventListener('click', () => {
+
+            nextButton.addEventListener('click', () => {
                 currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
                 showImage(currentIndex);
             });
         });
+    }
+
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(productData => {
+                productData.forEach(category => {
+                    const container = document.getElementById(category.name)?.querySelector('.product-grid');
+                    if (container) {
+                        container.innerHTML = category.products.map(createProduct).join('');
+                    } else {
+                        console.warn(`Container for category '${category.name}' not found.`);
+                    }
+                });
+            setupCarousels(); // Attach event listeners after products are added
+            })
+            .catch(error => console.error("Error loading product data:", error));
+    });
+
         document.querySelector('.menu-icon').addEventListener('click', function() {
             var submenu = document.querySelector('.submenu');
             submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
