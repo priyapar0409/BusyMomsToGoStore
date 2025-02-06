@@ -1,6 +1,6 @@
 [
 	{
-		"name": "category1",
+		"name": "travelEssentials",
 		"products": [
 			{
 				"title": "Amazon Fire HD 8 Kids tablet",
@@ -30,6 +30,19 @@
 					"https://m.media-amazon.com/images/I/6157BQ4ctvL._AC_SL1500_.jpg",
 					"https://m.media-amazon.com/images/I/71uomDkUfbL._AC_SL1500_.jpg",
 					"https://m.media-amazon.com/images/I/71pw92hjWBL._AC_SL1500_.jpg"
+				]
+			},
+			{
+				"title": "Inflatable Toddler Airplane Bed",
+				"description": "Inflatable Toddler Airplane Bed - Baby Airplane Bed - Inflatable Airplane Bed for Toddlers - Kids Plane Bed, Airplane Seat Extender for Kids - Blow Up Toddler Travel Bed with Tiny Electric Air Pump",
+				"link": "https://amzn.to/3CJaIHB",
+				"images": [
+					"https://m.media-amazon.com/images/I/713CyB7RvlL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/71lt0NRrk3L._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/71Sq9nhiWaL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/71zZjty0LeL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/81kooTClNSL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/71A4yuZtuuL._AC_SL1500_.jpg"
 				]
 			}
 		]
