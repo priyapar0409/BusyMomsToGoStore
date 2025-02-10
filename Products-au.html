@@ -267,109 +267,109 @@
     <div class="header">
         <!-- <img src="https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png" alt="Site Logo"> -->        
         <h1>Busy Moms Go To Store - Products</h1>
-        <div class="tabs">
-            <div class="tab active" data-category="travelEssentials">📦 Travel Essentials</div>
-            <div class="tab" data-category="category2">📦 Category 2</div>
-            <div class="tab" data-category="category3">📦 Category 3</div>
+        <div class="tabs"></div> <!-- Tabs will be inserted here dynamically -->
+        <div id="categories-container"></div> <!-- Categories will be inserted here dynamically -->
+        <div id="AaDisclaimer">
+            *As an Affiliate I earn from qualifying purchases
         </div>
     </div>
-    <div id="travelEssentials" class="category active">
-        <div class="product-grid"></div>
-    </div>
-    <div id="category2" class="category">
-        <div class="product-grid"></div>
-    </div>
-    <div id="category3" class="category">
-        <div class="product-grid"></div>
-    </div>
-    <div id="AaDisclaimer">
-        *As an Amazon Associate I earn from qualifying purchases
-    </div>
-    
     <script>
-        const categories = document.querySelectorAll('.category');
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                categories.forEach(c => c.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-category')).classList.add('active');
-            });
-        });
-
-
         document.addEventListener("DOMContentLoaded", function () {
-        const jsonUrl = "https://priyapar0409.github.io/BusyMomsToGoStore/products-au.json"; // Replace with actual URL
+            const jsonUrl = "https://priyapar0409.github.io/BusyMomsToGoStore/products-au.json"; // JSON URL
+            //const jsonUrl = "products.json"; // JSON URL
+            const tabsContainer = document.querySelector('.tabs');
+            const categoriesContainer = document.getElementById('categories-container');
 
-        function createProduct(product) {
-            return `
-                <div class="product">
-                    <div class="carousel">
-                        ${product.images.map((img, index) => `<img src="${img}" class="${index === 0 ? 'active' : ''}">`).join('')}
-                        <button class="prev">&#10094;</button>
-                        <button class="next">&#10095;</button>
+            function createProduct(product) {
+                return `
+                    <div class="product">
+                        <div class="carousel">
+                            ${product.images.map((img, index) => `<img src="${img}" class="${index === 0 ? 'active' : ''}">`).join('')}
+                            <button class="prev">&#10094;</button>
+                            <button class="next">&#10095;</button>
+                        </div>
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <a href="${product.link}" target="_blank">Check it out here</a>
                     </div>
-                    <h3>${product.title}</h3>
-                    <p>${product.description}</p>
-                    <a href="${product.link}" target="_blank">View on Amazon</a>
-                </div>
-            `;
-        }
-
-    function setupCarousels() {
-        document.querySelectorAll('.carousel').forEach(carousel => {
-            const images = carousel.querySelectorAll('img');
-            const prevButton = carousel.querySelector('.prev');
-            const nextButton = carousel.querySelector('.next');
-
-            if (!images.length || !prevButton || !nextButton) return;
-
-            let currentIndex = 0;
-
-            function showImage(index) {
-                images.forEach(img => img.classList.remove('active'));
-                images[index].classList.add('active');
+                `;
             }
 
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-                showImage(currentIndex);
-            });
+            function setupCarousels() {
+                document.querySelectorAll('.carousel').forEach(carousel => {
+                    const images = carousel.querySelectorAll('img');
+                    const prevButton = carousel.querySelector('.prev');
+                    const nextButton = carousel.querySelector('.next');
 
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-                showImage(currentIndex);
-            });
-        });
-    }
+                    if (!images.length || !prevButton || !nextButton) return;
 
-        fetch(jsonUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(productData => {
-                productData.forEach(category => {
-                    const container = document.getElementById(category.name)?.querySelector('.product-grid');
-                    if (container) {
-                        container.innerHTML = category.products.map(createProduct).join('');
-                    } else {
-                        console.warn(`Container for category '${category.name}' not found.`);
+                    let currentIndex = 0;
+
+                    function showImage(index) {
+                        images.forEach(img => img.classList.remove('active'));
+                        images[index].classList.add('active');
                     }
+
+                    prevButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                        showImage(currentIndex);
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                        showImage(currentIndex);
+                    });
                 });
-            setupCarousels(); // Attach event listeners after products are added
-            })
-            .catch(error => console.error("Error loading product data:", error));
-    });
+            }
 
-        document.querySelector('.menu-icon').addEventListener('click', function() {
-            var submenu = document.querySelector('.submenu');
-            submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+            fetch(jsonUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(productData => {
+                    if (!productData.length) {
+                        tabsContainer.innerHTML = "<p>No categories found.</p>";
+                        return;
+                    }
+
+                    productData.forEach((category, index) => {
+                        // Create a tab
+                        const tab = document.createElement('div');
+                        tab.classList.add('tab');
+                        if (index === 0) tab.classList.add('active'); // First tab active
+                        tab.textContent = `📦 ${category.name}`;
+                        tab.dataset.category = category.name;
+
+                        // Create a category section
+                        const categoryDiv = document.createElement('div');
+                        categoryDiv.id = category.name;
+                        categoryDiv.classList.add('category');
+                        if (index === 0) categoryDiv.classList.add('active'); // First category active
+                        categoryDiv.innerHTML = `<div class="product-grid">${category.products.map(createProduct).join('')}</div>`;
+
+                        // Append to the page
+                        tabsContainer.appendChild(tab);
+                        categoriesContainer.appendChild(categoryDiv);
+                    });
+
+                    // Add tab switching functionality
+                    document.querySelectorAll('.tab').forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                            document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+                            
+                            tab.classList.add('active');
+                            document.getElementById(tab.dataset.category).classList.add('active');
+                        });
+                    });
+
+                    setupCarousels();
+                })
+                .catch(error => console.error("Error loading product data:", error));
         });
-
     </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 [
 	{
-		"name": "travelEssentials",
+		"name": "Travel Essentials",
 		"products": [
 			{
 				"title": "Amazon Fire HD 8 Kids tablet",
@@ -102,7 +102,7 @@
 		]
 	},
 	{
-		"name": "category2",
+		"name": "Test2",
 		"products": [
 			{
 				"title": "Instant Pot Duo 7-in-1 Electric Pressure Cooker",
@@ -137,7 +137,32 @@
 		]
 	},
 	{
-		"name": "category3",
+		"name": "Test3",
+		"products": [
+			{
+				"title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+				"description": "James Clear's bestseller offering practical strategies to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
+				"link": "https://www.amazon.com/dp/0735211299",
+				"images": [
+					"https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+					"https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg",
+					"https://m.media-amazon.com/images/I/51-uspgqWIL._SX329_BO1,204,203,200_.jpg"
+				]
+			},
+			{
+				"title": "Where the Crawdads Sing",
+				"description": "Delia Owens' novel about a young woman who grows up isolated in the marshes of North Carolina, intertwining a murder mystery with a coming-of-age story.",
+				"link": "https://www.amazon.com/dp/0735219109",
+				"images": [
+					"https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
+					"https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg",
+					"https://m.media-amazon.com/images/I/81WWiiLg5XL._AC_UL640_QL65_.jpg"
+				]
+			}
+		]
+	},
+	{
+		"name": "Test4",
 		"products": [
 			{
 				"title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
