@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Self Care",
+		"name": "Hair Care",
 		"products": [
 			{
 				"title": "Nutrafol Women's Hair Growth Supplements",
@@ -138,6 +138,21 @@
 					"https://m.media-amazon.com/images/I/81oexnFnpCL._SL1500_.jpg",
 					"https://m.media-amazon.com/images/I/81QbZ+7NFxL._SL1500_.jpg",
 					"https://m.media-amazon.com/images/I/71PpwkTGoML._SL1500_.jpg"
+				]
+			},
+			{
+				"title": "Conair Unbound Cordless Auto Curler",
+				"description": "Create beautiful curls & waves with Conair Unbound Auto Curler, the creators of Curl Secret. This high performance curler is rechargeable (charge fully overnight before first use) and offers up to 60-minutes of cord-free runtime",
+				"link": "https://amzn.to/415XFbA",
+				"images": [
+					"https://m.media-amazon.com/images/I/81IeMG2YYtL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/81zg8gC48qL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/81sBRV+P0zL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/8178Rk0LNmL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/81Zdgl483VL._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/817dD2JjQ3L._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/71WkkN1hn8L._AC_SL1500_.jpg",
+					"https://m.media-amazon.com/images/I/81G8wvLZc2L._AC_SL1500_.jpg"
 				]
 			}
 		]
