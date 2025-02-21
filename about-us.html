@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Busy Moms' Go-To Store</title>
+    <title>About Us | Mom Simplify</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,15 +12,68 @@
             background-color: #f9f9f9;
             color: #333;
         }
-        .header {
-            background: url(https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png) no-repeat center center;
-            background-size: cover;
+        .headerLogo {
             color: #594f4f;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px 40px; /* Extra bottom padding to fit "About Us" */
             font-size: 50px;
             font-weight: bold;
             font-family: cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url(https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png);
+            background-size: 100% 100%;
+
+        }
+
+        /* Logo is centered */
+        .logo {
+            width: 264px;
+        }
+
+        /* "About Us" text centered below logo */
+        .about-text {
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-top: 15px; /* Space between logo and text */
+        }
+
+        /* Menu button aligned with "About Us" but to the right */
+        .menu-container {
+            position: absolute;
+            right: 25%;
+            transform: translateY(-50%); /* Aligns with "About Us" */
+        }
+
+        .menu-icon {
+            width: 30px;
+            cursor: pointer;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .submenu a {
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+            font-size: large;
+        }
+
+        .submenu a:hover {
+            background: #f0f0f0;
         }
         .container {
             max-width: 900px;
@@ -30,22 +83,27 @@
             border-radius: 10px;
             font-family: cursive;
         }
+
         .section {
             text-align: center;
             margin-bottom: 30px;
         }
+
         h1 {
             color: #ff7f50;
         }
+
         p {
             font-size: 18px;
             line-height: 1.6;
             margin: 10px 0;
         }
+
         .cta {
             text-align: center;
             margin-top: 20px;
         }
+
         .cta a {
             display: inline-block;
             padding: 12px 25px;
@@ -55,21 +113,48 @@
             font-size: 18px;
             border-radius: 5px;
         }
+
         .cta a:hover {
             background-color: #ff5722;
+        }
+        .home-icon {
+            position: absolute;
+            right: 15%;
+            transform: translateY(-50%); /* Aligns with "About Us" */
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        About Us
+    <section class="headerLogo">
+        <!-- Logo Centered -->
+        <a href="https://mom-simplify.systeme.io/welcome">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67b8ac404e73b_MomSimplify.png" class="logo" loading="eager">
+        </a>
+    
+        <!-- "About Us" Text Centered Below -->
+        <div class="about-text">About Us
+        <div class="home-icon">                
+            <a href="https://mom-simplify.systeme.io/welcome" >
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="30" alt="Home">
+            </a>
+        </div>
+        <!-- Menu Button aligned with About Us but to the right -->
+        <div class="menu-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" class="menu-icon" alt="Menu">
+            <div class="submenu">
+                <a href="https://mom-simplify.systeme.io/products" target="_blank">Products</a><br>
+                <a href="https://mom-simplify.systeme.io/about-us" target="_blank">About Us</a><br>
+                <a href="https://mom-simplify.systeme.io/contact" target="_blank">Contact Us</a><br>
+                <a href="https://mom-simplify.systeme.io/mothers-manage-it-blog" target="_blank">Blog</a>
+            </div>
+        </div>
     </div>
-
+    </section>
     <div class="container">
         <div class="section">
             <h1>Making Mom Life Easier, One Step at a Time</h1>
-            <p>Being a mom is a full-time job, and we understand how overwhelming it can be! At <b>Busy Moms' Go-To Store</b>, we believe that moms deserve all the support they can get to make life more organized, stress-free, and enjoyable.</p>
+            <p>Being a mom is a full-time job, and we understand how overwhelming it can be! At <b>Mom Simplify</b>, we believe that moms deserve all the support they can get to make life more organized, stress-free, and enjoyable.</p>
         </div>
 
         <div class="section">
@@ -85,9 +170,29 @@
         </div>
 
         <div class="cta">
-            <a href="https://busy-moms-goto-store.systeme.io/welcome">Explore Our Store</a>
+            <a href="https://mom-simplify.systeme.io/welcome">Explore Our Store</a>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector(".menu-icon");
+            const submenu = document.querySelector(".submenu");
 
+            if (menuIcon && submenu) {
+                menuIcon.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevents clicking outside from closing immediately
+                    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                });
+
+                // Hide submenu when clicking outside
+                document.addEventListener("click", function (event) {
+                    if (!submenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                        submenu.style.display = "none";
+                    }
+                });
+            }
+        });
+
+    </script>
 </body>
 </html>

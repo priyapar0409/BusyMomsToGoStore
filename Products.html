@@ -213,14 +213,39 @@
             display: grid;
             align-items: center;
         }
-        .submenu {
-            display: none; 
-            position: absolute; 
-            background: white; 
-            border: 1px solid #ccc; 
-            padding: 10px;
-            width: 100px;
+        .menu-container {
+            position: relative; /* Ensures submenu is positioned relative to this container */
+            display: inline-block;
         }
+
+        .menu-icon {
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%; /* Positions the submenu below the menu icon */
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensures it appears on top */
+        }
+
+        .submenu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .submenu a:hover {
+            background: #f0f0f0;
+        }
+
     </style>
 </head>
 <body>
@@ -232,23 +257,24 @@
                         <div size="12" class="header4">
                             <div class="header5">
                                 <div width="264" class="header6">
-                                    <a href="https://busy-moms-goto-store.systeme.io/welcome">
+                                    <a href="https://mom-simplify.systeme.io/welcome">
                                         <picture class="pic1">
-                                            <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67a28bdaa9da3_BusyMomsGoToStore.png" width="264" loading="eager" class="img1">
+                                            <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67b8ac404e73b_MomSimplify.png" width="264" loading="eager" class="img1">
                                         </picture>
                                     </a>
                                 </div>
                             </div>
                             <div style="display: flex; gap: 20px; align-self: flex-end;">
-                                <a href="https://busy-moms-goto-store.systeme.io/welcome" class="home-icon">
+                                <a href="https://mom-simplify.systeme.io/welcome" class="home-icon">
                                     <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="30" alt="Home">
                                 </a>
                                 <div class="menu-container">
                                     <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" width="30" alt="Menu" class="menu-icon">
                                     <div class="submenu">
-                                        <a href="https://busy-moms-goto-store.systeme.io/about-us" target="_blank">About Us</a><br>
-                                        <a href="https://busy-moms-goto-store.systeme.io/contact" target="_blank">Contact Us</a><br>
-                                        <a href="https://busy-moms-goto-store.systeme.io/mothers-manage-it-blog" target="_blank">Blog</a>
+                                        <a href="https://mom-simplify.systeme.io/products" target="_blank">Products</a><br>
+                                        <a href="https://mom-simplify.systeme.io/about-us" target="_blank">About Us</a><br>
+                                        <a href="https://mom-simplify.systeme.io/contact" target="_blank">Contact Us</a><br>
+                                        <a href="https://mom-simplify.systeme.io/mothers-manage-it-blog" target="_blank">Blog</a>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +292,7 @@
     </div>
     <div class="header">
         <!-- <img src="https://d1yei2z3i6k35z.cloudfront.net/systeme-common/6587170f57fe1_cover.png" alt="Site Logo"> -->        
-        <h1>Busy Moms Go To Store - Products</h1>
+        <h1>Mom Simplify - Products</h1>
         <div class="tabs"></div> <!-- Tabs will be inserted here dynamically -->
         <div id="categories-container"></div> <!-- Categories will be inserted here dynamically -->
         <div id="AaDisclaimer">
@@ -371,6 +397,25 @@
                 })
                 .catch(error => console.error("Error loading product data:", error));
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector(".menu-icon");
+            const submenu = document.querySelector(".submenu");
+
+            if (menuIcon && submenu) {
+                menuIcon.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevents clicking outside from closing immediately
+                    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                });
+
+                // Hide submenu when clicking outside
+                document.addEventListener("click", function (event) {
+                    if (!submenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                        submenu.style.display = "none";
+                    }
+                });
+            }
+        });
+
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BusyMomsToGoStore</title>
+    <title>Mom Simplify</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
        .header {
@@ -377,6 +377,128 @@
         .social-links a:hover {
             color: #ff7f50;
         }       
+        .headerLogo {
+            font-family: "Libre Franklin";
+            font-weight: 400;
+            font-style: normal;
+            text-align: initial;
+            display: flex;
+            background-color: rgb(245, 243, 243);
+            padding-bottom: 40px;
+            background-size: 100%;
+            background-position: 50% 0%;
+            background-repeat: no-repeat;
+            background-attachment: initial;
+        }
+        .header1 {
+            box-sizing: inherit;
+            max-width: 960px;
+            width: 100%;
+            margin: auto;
+        }
+        .header2 {
+            box-sizing: inherit;
+            position: relative;
+            margin: 0px;
+        }
+        .header3 {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(12, 1fr);
+            background-color: rgba(255, 255, 255, 0);
+            background-image: none;
+            column-gap: unset !important;
+            background-size: initial;
+            background-position: 50% 50%;
+            background-repeat: repeat;
+            background-attachment: initial;
+        }
+        .header4 {
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / 13;
+            align-self: flex-start;
+        }
+        .header5 {
+            position: relative;
+            text-align: initial;
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+        }
+        .header6 {
+            align-self: center;
+        }
+        .pic1 {
+            position: relative;
+            display: block;
+            height: 0px;
+            overflow: visible;
+            padding-bottom: 100%;
+        }
+        .img1 {
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
+            width: 264px;
+        }
+        .header7 {
+            position: relative;
+            text-align: initial;
+            margin: 0px;
+        }
+        .header8 {
+            display: grid;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            grid-template-columns: repeat(12, 1fr);
+            padding: 10px;
+            background-image: none;
+            column-gap: unset !important;
+            background-size: initial;
+            background-position: 50% 50%;
+            background-repeat: repeat;
+            background-attachment: initial;
+        }
+        .header9 {
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / 13;
+            align-self: flex-start;
+        }
+        .menu-container {
+            position: relative; /* Ensures submenu is positioned relative to this container */
+            display: inline-block;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%; /* Positions the submenu below the menu icon */
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensures it appears on top */
+        }
+
+        .submenu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .submenu a:hover {
+            background: #f0f0f0;
+        }
+
     </style>
 </head>
 <body>
@@ -386,24 +508,52 @@
                 <div class="header2">
                     <div class="header3">
                         <div size="12" class="header4">
-                            <div class="header5">
-                                <div width="264" class="header6">
-                                    <picture class="pic1">
-                                        <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67a28bdaa9da3_BusyMomsGoToStore.png" width="264" loading="eager" class="img1">
-                                    </picture>
-                                </div>
-                            </div>
-                            <div class="header7">
-                                <div class="header8">
-                                    <div size="12" class="header9">
+                            <div>
+                                <section class="headerLogo">
+                                    <div width="960px" class="header1">
+                                        <div class="header2">
+                                            <div class="header3">
+                                                <div size="12" class="header4">
+                                                    <div class="header5">
+                                                        <div width="264" class="header6">
+                                                            <a href="https://mom-simplify.systeme.io/welcome">
+                                                                <picture class="pic1">
+                                                                    <img src="https://d1yei2z3i6k35z.cloudfront.net/11121723/67b8ac404e73b_MomSimplify.png" width="264" loading="eager" class="img1">
+                                                                </picture>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div style="display: flex; gap: 20px; align-self: flex-end; align-self: anchor-center;">
+                                                        <!-- <a href="https://mom-simplify.systeme.io/welcome" class="home-icon">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="30" alt="Home">
+                                                        </a> -->
+                                                        <div class="menu-container">
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/56/56763.png" width="30" alt="Menu" class="menu-icon">
+                                                            <div class="submenu">
+                                                                <a href="https://mom-simplify.systeme.io/products" target="_blank">Products</a><br>
+                                                                <a href="https://mom-simplify.systeme.io/about-us" target="_blank">About Us</a><br>
+                                                                <a href="https://mom-simplify.systeme.io/contact" target="_blank">Contact Us</a><br>
+                                                                <a href="https://mom-simplify.systeme.io/mothers-manage-it-blog" target="_blank">Blog</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="header7">
+                                                        <div class="header8">
+                                                            <div size="12" class="header9">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
                             <div class="header10">
                                 <div class="header11">
                                     <p dir="ltr">
                                         <span style="color: rgba(247, 160, 8, 1)">
-                                            <strong>Welcome to Busy Moms GoTo Store</strong>
+                                            <strong>Welcome to Mom Simplify</strong>
                                         </span>
                                     </p>
                                     <h5 dir="ltr">Welcome to your one-stop shop for products and tools designed to help busy moms stay organized, save time, and manage everyday life with ease. Whether you're looking for time-saving gadgets, fun educational tools, or the perfect planner, we've got you covered!</h5>
@@ -425,7 +575,7 @@
                     <div class="btnOuter">
                         <div size="12" class="btnInner">
                             <div class="anchorOuter">
-                                <a target="_self" rel="" href="https://busy-moms-goto-store.systeme.io/products" class="prodLink">
+                                <a target="_self" rel="" href="https://mom-simplify.systeme.io/products" class="prodLink">
                                     <div>Go To The Products</div>
                                 </a>
                             </div>
@@ -445,14 +595,14 @@
                                 <div class="bio7">
                                     <div size="6" class="bio8">
                                         <div class="bio9">
-                                            <a target="openInNewWindow" href="https://busy-moms-goto-store.systeme.io/about-us" class="achAboutMe">
+                                            <a target="openInNewWindow" href="https://mom-simplify.systeme.io/about-us" class="achAboutMe">
                                                 <div class="bio10">About Us</div>
                                             </a>
                                         </div>
                                     </div>
                                     <div size="6" class="bio11">
                                         <div class="bio12">
-                                            <a target="openInNewWindow" href="https://busy-moms-goto-store.systeme.io/mothers-manage-it-blog" class="achMyBlog">
+                                            <a target="openInNewWindow" href="https://mom-simplify.systeme.io/mothers-manage-it-blog" class="achMyBlog">
                                                 <div class="bio13">Blog</div>
                                             </a>
                                         </div>
@@ -479,7 +629,28 @@
             <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>&copy; 2025 Mom Simplify. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector(".menu-icon");
+            const submenu = document.querySelector(".submenu");
+
+            if (menuIcon && submenu) {
+                menuIcon.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevents clicking outside from closing immediately
+                    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                });
+
+                // Hide submenu when clicking outside
+                document.addEventListener("click", function (event) {
+                    if (!submenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                        submenu.style.display = "none";
+                    }
+                });
+            }
+        });
+
+    </script>
 </body>
 </html>
